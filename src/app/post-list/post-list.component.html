@@ -1,0 +1,9 @@
+<div class="row">
+<div class="col-xs-12">
+    <app-post-display-content
+    *ngFor="let postEl of posts; let i = index"
+    [post]="postEl"
+    [index]="i">
+    </app-post-display-content>
+  </div>
+</div> 
