@@ -1,5 +1,5 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { Post } from "../Posts.model";
+import { Post } from "../post-model";
 import * as TestingActions from './testing.actions'
 
 export interface State {

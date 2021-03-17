@@ -1,5 +1,5 @@
 import { Action } from "@ngrx/store";
-import { Post } from "../Posts.model";
+import { Post } from "../post-model";
 
 export const ADD_POSTS = '[Test] Add Posts'  
 export const FETCH_POSTS = '[Test] Fetch Posts'

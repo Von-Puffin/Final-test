@@ -12,12 +12,16 @@ import { PostDisplayContentComponent } from './post-display-content/post-display
 import { RouterModule } from '@angular/router';
 import { PostListComponent } from './post-list/post-list.component';
 import { AppRoutingModule } from './app-routing-module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { HomeStartComponent } from './home-start/home-start.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostDisplayContentComponent,
-    PostListComponent
+    PostListComponent,
+    HomePageComponent,
+    HomeStartComponent
   ],
   imports: [
     BrowserModule,

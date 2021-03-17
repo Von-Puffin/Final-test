@@ -3,7 +3,8 @@ import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType} from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { map, switchMap, withLatestFrom } from "rxjs/operators";
-import { Post } from "../Posts.model";
+import { GenerateHeaderService } from "../generate-header.service";
+import { Post } from "../post-model";
 
 import * as TestingActions from './testing.actions'
 import * as fromTesting from './testing.reducers'
@@ -25,12 +26,17 @@ export class TestingEffects {
     @Effect()
         fetchPosts = this.actions$.pipe(
             ofType(TestingActions.FETCH_POSTS), switchMap(() => {
-                return this.http.get<Post[]>(
-                    'http://localhost:8080/api/model/1'
+                return this.http
+                .get<Post[]>(
+                    'http://192.168.1.26:8080/api/model/1', {
+                        headers: GenerateHeaderService.getStandardApiCallHeader()
+                    }
                 )
             }),
             map(posts => {
                 return posts.map(post => {
+                    console.log(typeof post);
+                    console.log(post);
                     return {
                         ...post
                     }

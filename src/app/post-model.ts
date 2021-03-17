@@ -10,3 +10,5 @@ export class Post {
     }
   }
   //the model of what a post should be
+
+  

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
-import { Post } from '../Posts.model';
+import { Post } from '../post-model';
 import { Store } from '@ngrx/store';
 import * as fromTesting from '../store/testing.reducers'
 import { Router } from '@angular/router';
@@ -26,7 +26,8 @@ export class PostListComponent implements OnInit {
     .pipe(map(postState => postState.posts))
     .subscribe(
       (posts: Post[]) => {
-        this.posts = posts
+        this.posts = posts;
+        
       }
       )
   }
