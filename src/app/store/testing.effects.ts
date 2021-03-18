@@ -27,18 +27,16 @@ export class TestingEffects {
         fetchPosts = this.actions$.pipe(
             ofType(TestingActions.FETCH_POSTS), switchMap(() => {
                 return this.http
-                .get<Post[]>(
-                    'http://192.168.1.26:8080/api/model/1', {
+                .get<string[]>(
+                    'http://localhost:8080/api/model/1', {
                         headers: GenerateHeaderService.getStandardApiCallHeader()
                     }
                 )
             }),
             map(posts => {
                 return posts.map(post => {
-                    console.log(typeof post);
-                    console.log(post);
                     return {
-                        ...post
+                        ...JSON.parse(post)
                     }
                 })
             }),

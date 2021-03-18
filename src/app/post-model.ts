@@ -9,6 +9,7 @@ export class Post {
         this.said_by = said_by;
     }
   }
+  
   //the model of what a post should be
 
   
